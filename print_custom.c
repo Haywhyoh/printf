@@ -10,7 +10,6 @@
  * if a flag is passed to _printf
  * Return: number of char printed
  */
-
 int print_bigS(va_list l, flags_t *f)
 {
 	int i, count = 0;
@@ -45,7 +44,6 @@ int print_bigS(va_list l, flags_t *f)
  * if a flag is passed to _printf
  * Return: length of the printed string
  */
-
 int print_rev(va_list l, flags_t *f)
 {
 	int i = 0, j;
@@ -54,6 +52,7 @@ int print_rev(va_list l, flags_t *f)
 	(void)f;
 	if (!s)
 		s = "(null)";
+
 	while (s[i])
 		i++;
 
@@ -70,7 +69,6 @@ int print_rev(va_list l, flags_t *f)
  * if a flag is passed to _printf
  * Return: length of the printed string
  */
-
 int print_rot13(va_list l, flags_t *f)
 {
 	int i, j;
@@ -82,9 +80,7 @@ int print_rot13(va_list l, flags_t *f)
 	for (j = 0; s[j]; j++)
 	{
 		if (s[j] < 'A' || (s[j] > 'Z' && s[j] < 'a') || s[j] > 'z')
-		{
 			_putchar(s[j]);
-		}
 		else
 		{
 			for (i = 0; i <= 52; i++)
@@ -94,6 +90,7 @@ int print_rot13(va_list l, flags_t *f)
 			}
 		}
 	}
+
 	return (j);
 }
 
@@ -103,10 +100,10 @@ int print_rot13(va_list l, flags_t *f)
  * @f: pointer to the struct flags in which we turn the flags on
  * Return: number of char printed
  */
-
 int print_percent(va_list l, flags_t *f)
 {
 	(void)l;
 	(void)f;
 	return (_putchar('%'));
 }
+
